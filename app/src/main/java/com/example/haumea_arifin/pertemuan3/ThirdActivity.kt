@@ -3,6 +3,7 @@ package com.example.haumea_arifin.pertemuan3
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -42,6 +43,17 @@ class ThirdActivity : AppCompatActivity() {
                 Toast.LENGTH_SHORT
             ).show()
 
+        }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressedDispatcher.onBackPressed()
+                true
+            }
+
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }

@@ -12,6 +12,7 @@ import com.example.haumea_arifin.databinding.ActivityMainBinding
 import com.example.haumea_arifin.databinding.ActivityThirdBinding
 import com.example.haumea_arifin.pertemuan3.ThirdResultActivity
 import com.example.haumea_arifin.pertemuan4.FourthActivity
+import com.example.haumea_arifin.pertemuan5.FifthActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,7 +39,21 @@ class MainActivity : AppCompatActivity() {
 
             startActivity(intent)
 
+        }
 
+        binding.btnToFifth.setOnClickListener {
+
+            val intent = Intent(this, FifthActivity::class.java)
+
+            startActivity(intent)
+
+        }
+
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.apply {
+            title = "Activity Fourth"
+            subtitle = "Ini adalah subtitle"
+            setDisplayShowHomeEnabled(true)
         }
     }
 }
