@@ -42,11 +42,29 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnToFifth.setOnClickListener {
-
             val intent = Intent(this, FifthActivity::class.java)
-
             startActivity(intent)
+        }
 
+        binding.btnLogout.setOnClickListener {
+            androidx.appcompat.app.AlertDialog.Builder(this)
+                .setTitle("Logout")
+                .setMessage("Yakin mau logout?")
+                .setPositiveButton("Ya") { dialog, _ ->
+                    val sharedPref = getSharedPreferences("user_pref", android.content.Context.MODE_PRIVATE)
+                    val editor = sharedPref.edit()
+                    editor.clear()
+                    editor.apply()
+                    dialog.dismiss()
+                    
+                    val intent = Intent(this, AuthActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+                .setNegativeButton("Tidak") { dialog, _ ->
+                    dialog.dismiss()
+                }
+                .show()
         }
 
         setSupportActionBar(binding.toolbar)
