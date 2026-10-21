@@ -26,6 +26,14 @@ class ThirdActivity : AppCompatActivity() {
             insets
         }
 
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.apply {
+            title = "Activity Third"
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+            setHomeAsUpIndicator(R.drawable.ic_arrow_back)
+        }
+
         binding.btnKirim.setOnClickListener {
             val noTujuan = binding.inputNoTujuan.text.toString()
 

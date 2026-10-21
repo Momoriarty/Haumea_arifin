@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Haumea_arifin">
         <activity
-            android:name=".MainActivity"
+            android:name=".Home.pertemuan2.SecondActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity

@@ -6,13 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.haumea_arifin.AuthActivity
+import com.example.haumea_arifin.Home.pertemuan2.SecondActivity
+import com.example.haumea_arifin.Home.pertemuan3.ThirdActivity
 import com.example.haumea_arifin.Home.pertemuan4.FourthActivity
 import com.example.haumea_arifin.Home.pertemuan5.FifthActivity
 import com.example.haumea_arifin.Home.pertemuan7.SevenActivity
 import com.example.haumea_arifin.databinding.FragmentHomeBinding
-import androidx.appcompat.app.AppCompatActivity
 
 class HomeFragment : Fragment() {
 
@@ -33,11 +35,25 @@ class HomeFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
         (requireActivity() as AppCompatActivity).supportActionBar?.apply {
             title = "Home"
         }
+
+        // Navigasi ke SecondActivity
+        binding.btnToSecond.setOnClickListener {
+            val intent = Intent(requireContext(), SecondActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Navigasi ke ThirdActivity
+        binding.btnToThird.setOnClickListener {
+            val intent = Intent(requireContext(), ThirdActivity::class.java)
+            startActivity(intent)
+        }
+
         // Navigasi ke FourthActivity dengan mengirim data
         binding.btnToFourth.setOnClickListener {
             val intent = Intent(requireContext(), FourthActivity::class.java)
