@@ -9,6 +9,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.haumea_arifin.AuthActivity
+import com.example.haumea_arifin.Home.pertemuan10.TenthActivity
 import com.example.haumea_arifin.Home.pertemuan2.SecondActivity
 import com.example.haumea_arifin.Home.pertemuan3.ThirdActivity
 import com.example.haumea_arifin.Home.pertemuan4.FourthActivity
@@ -72,6 +73,12 @@ class HomeFragment : Fragment() {
         // Navigasi ke SevenActivity
         binding.btnToSeven.setOnClickListener {
             val intent = Intent(requireContext(), SevenActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Navigasi ke TenthActivity
+        binding.btnToTenth.setOnClickListener {
+            val intent = Intent(requireContext(), TenthActivity::class.java)
             startActivity(intent)
         }
 
